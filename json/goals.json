@@ -1,0 +1,66 @@
+[
+  {
+    "id": "1",
+    "health": 1.0,
+    "type": "relationship",
+    "attributes": {
+      "name": "Craig",
+      "avatar-url": "avatar-craig.jpg",
+      "parameter-1": "call or text",
+      "parameter-2": "at least",
+      "parameter-3": "once",
+      "parameter-4": "day"
+    },
+    "responses": [
+      {
+        "id": "1",
+        "type": "reward",
+        "title": "How about some free cinema tickets.",
+        "reason": "Your relationship is pretty good."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "health": 0.1,
+    "type": "relationship",
+    "attributes": {
+      "name": "Grandma",
+      "avatar-url": "avatar-grandma.jpg",
+      "parameter-1": "Call or text",
+      "parameter-2": "at least",
+      "parameter-3": "3 times",
+      "parameter-4": "week"
+    },
+    "responses": [
+      {
+        "id": "2",
+        "type": "normal",
+        "title": "Send a photo of what you’re doing right now.",
+        "reason": "It’s over a week since you last called or texted."
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "health": 0.4,
+    "type": "wellbeing",
+    "attributes": {
+      "name": "Take more breaks",
+      "icon-url": "icon-wellbeing.pdf",
+      "parameter-1": "Take a break",
+      "parameter-2": "10 minutes",
+      "parameter-3": "at least",
+      "parameter-4": "once",
+      "parameter-5": "hour"
+    },
+    "responses": [
+      {
+        "id": "3",
+        "type": "normal",
+        "title": "Take a short break.",
+        "reason": "It’s 1 hour since your last break."
+      }
+    ]
+  }
+]
