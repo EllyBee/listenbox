@@ -75,7 +75,10 @@ void setup()
   delay(15);
   
   turnMotor();
-  happy = true; 
+  
+  //set led to green to show it is ready
+  setColor(0,255,0);
+  //happy = true; 
 
 } 
 
