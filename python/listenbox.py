@@ -17,6 +17,7 @@ def setuparduino():
 	try:
 		global serial_connection
 		serial_connection = serial.Serial(SERIAL_PATH, SERIAL_SPEED)
+		print 'connected to arduino'
 	except:
 		print "Problem connecting to arduino"
 		exit()
@@ -30,11 +31,11 @@ def checkNewValue():
 	 
 	 if(newHealth<currentHealth):
 	 	#turn light red
-	 	send(72)
+	 	send(73)
 
 	 if(newHealth>currentHealth):
 	 	#turn light green
-	 	send(73)
+	 	send(72)
 
 
 setuparduino()
