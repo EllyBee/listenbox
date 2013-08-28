@@ -30,11 +30,11 @@ def send(data):
 def checkNewValue():
 	 
 	 if(newHealth<currentHealth):
-	 	#turn light red
+	 	#pulse light blue
 	 	send(73)
 
 	 if(newHealth>currentHealth):
-	 	#turn light green
+	 	#pulse light green
 	 	send(72)
 
 
