@@ -8,16 +8,15 @@ void happyLoop(){
 
 void sadLoop(){
   
-  
-  xFade(60, 10, 0, 0, 0, 255, 200, EASED);
-  xFade(0, 0, 255, 60, 10, 0, 200, EASED);
+  xFade(0, 0, 255, 255, 0, 255, 200, EASED);
+  xFade(255, 0, 255, 0, 0, 255, 200, EASED);
   
 }
 
 
 
-void alert(){
-  
-  
+void reset(){
+
+  setColor(0,0,0);
   
 }

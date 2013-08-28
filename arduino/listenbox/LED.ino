@@ -1,4 +1,4 @@
-void ledPulse(){
+/*void ledPulse(){
   
    unsigned long currentMillis = millis();
  
@@ -26,4 +26,4 @@ void ledON(){
 void ledReset(){
   
    digitalWrite(ledPin, LOW);
-}
+}*/

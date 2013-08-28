@@ -1,18 +1,22 @@
 #include <Servo.h> 
-//test comments added
+
 //motor stuff//////////////////
 Servo myservo;
+//servo timer stuff
+boolean motorOn = false;
+int motorCount = 0;
+long motorinterval = 5;           // interval at which to pause servo motor
+long previousMillis_motor = 0; 
+//change this number to control how many times the box sits up and down
+int nudges = 4;
 
 //serial stuff
 byte val;
 
-//led stuff///////////////////////
-const int ledPin =  4;      // the number of the LED pin
+//booleans///////////////////////
+boolean happy = false;
+boolean sad = false;
 
-//led pulse stuff
-int ledState = LOW;             // ledState used to set the LED
-long previousMillis = 0;        // will store last time LED was updated
-long interval = 1000;           // interval at which to blink (milliseconds)
 
 //RGB Led stuff/////////////////////
 const int LED_R = 3;
@@ -33,11 +37,8 @@ int duration;
 
 void setup() 
 { 
-  //setup motor
-  myservo.attach(9);
-  
   //set up led
-  pinMode(ledPin, OUTPUT);
+  //pinMode(ledPin, OUTPUT);
   
   //set up rgb led//////////////////////////
  // Set the pins for OUTPUT
@@ -60,28 +61,31 @@ void setup()
   
   //start serial communication/////////
   Serial.begin(9600);
-
+  
+   //setup motor
+  myservo.attach(10);
   //check servo working///////////////
   myservo.write(0);            
-  delay(50);                      
+  delay(15);                      
   myservo.write(90); 
-  delay(50);
+  delay(15);
   myservo.write(0);
-  delay(50);
-
-  //check led working//////////////////////
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
+  delay(15);
+  myservo.write(90); 
+  delay(15);
+  
+  turnMotor();
+  happy = true; 
 
 } 
 
 
 void loop() 
 { 
-  checkInput();
-  
-  happyLoop();
+  //checkInput();
+  if(motorOn) turnMotor();
+  if(happy) happyLoop();
+  if(sad) sadLoop();
  
 } 
 
